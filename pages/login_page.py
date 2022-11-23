@@ -7,11 +7,12 @@ class LoginPage(BasePage):
     scout_panel_text_xpath = "//h5"
     login_field_xpath = "//*[@id='login']"
     password_field_xpath = "//*[@id='password']"
-    remind_password_hyperlink_xpath = "//*[@id='__next']/form/div/div[1]/a"
+    remind_password_hyperlink_xpath = "//a"
     language_selector_xpath = "//input[@class='MuiSelect-nativeInput']"
     sign_in_button_xpath = "//button[@type='submit']"
     expected_title = "Scouts panel - sign in"
     login_url = "https://scouts-test.futbolkolektyw.pl/en"
+    identifier_or_password_invalid_xpath = "//div[1]/div[3]/span"
 
     def type_in_email(self, email):
         self.field_send_keys(self.login_field_xpath, email)
@@ -23,8 +24,7 @@ class LoginPage(BasePage):
         self.click_on_the_element(self.sign_in_button_xpath)
 
     def check_title_of_page(self):
-        time.sleep(5)
-        assert self.get_page_title(self.login_url) == self.expected_title
+        self.wait_visibility_of_element_located(self.scout_panel_text_xpath)
+        #time.sleep(5)
+        #assert self.get_page_title(self.login_url) == self.expected_title
 
-def type(login,  email):
-    pass
