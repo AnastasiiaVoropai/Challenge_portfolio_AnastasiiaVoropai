@@ -18,7 +18,6 @@ class AddPlayerPage(BasePage):
     right_leg_xpath = "//*[@id='menu-leg']/div[3]/ul/li[1]"
     main_position_input_xpath = "//div[11]/div/div/input"
     submit_button_xpath = "//div[3]/button[1]"
-    player_added_xpath = "//*[@id='2a9ywcfb0y']/div[1]"
     player_added_expected_text = "Added player."
     player_added_contains_xpath = '//*[contains(text(), "' + player_added_expected_text + '")]'
     field_alert_expected_text = "Required"
