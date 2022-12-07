@@ -25,7 +25,7 @@ class Dashboard(BasePage):
     button_add_player_xpath = "//div[2]/div/div/a/button/span[1]"
     activity_xpath = "//div[3]/div/div/h2"
     expected_title = "Scouts panel"
-    dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
+    dashboard_url = "https://scouts.futbolkolektyw.pl/en/"
     language_expected_text = "English"
     #wait = WebDriverWait(driver, 10)
 

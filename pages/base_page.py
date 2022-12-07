@@ -15,9 +15,11 @@ class BasePage():
         self.driver = driver
 
     def field_send_keys(self, selector, value, locator_type=By.XPATH):
+        self.wait_visibility_of_element_located(selector)
         return self.driver.find_element(locator_type, selector).send_keys(value)
 
     def click_on_the_element(self, selector, selector_type=By.XPATH):
+        self.wait_visibility_of_element_located(selector)
         return self.driver.find_element(selector_type, selector).click()
 
     def get_page_title(self, url):
@@ -41,5 +43,5 @@ class BasePage():
         #time.sleep(3)
 
     def wait_visibility_of_element_located(self, locator, locator_type=DEFAULT_LOCATOR_TYPE):
-        wait = WebDriverWait(self.driver, 10)
+        wait = WebDriverWait(self.driver, 5)
         element = wait.until(EC.visibility_of_element_located((locator_type, locator)))

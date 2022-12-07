@@ -11,7 +11,7 @@ class LoginPage(BasePage):
     language_selector_xpath = "//input[@class='MuiSelect-nativeInput']"
     sign_in_button_xpath = "//button[@type='submit']"
     expected_title = "Scouts panel - sign in"
-    login_url = "https://scouts-test.futbolkolektyw.pl/en"
+    login_url = "https://scouts.futbolkolektyw.pl/en/"
     identifier_or_password_invalid_xpath = "//div[1]/div[3]/span"
 
     def type_in_email(self, email):
